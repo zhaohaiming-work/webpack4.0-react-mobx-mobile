@@ -1,9 +1,12 @@
-// const pxtorem = require('postcss-pxtorem') // px转rem
-const autoprefixer = require('autoprefixer') // 添加浏览器前缀
-
 module.exports = {
   ident: 'postcss',
   plugins: [
+    require('postcss-pxtorem')({
+      rootValue: 75,
+      propWhiteList: [],
+      selectorBlackList: [/^html$/],
+      minPixelValue: 2
+    }),
     require('postcss-flexbugs-fixes'),
     require('autoprefixer')({
       overrideBrowserslist: [
