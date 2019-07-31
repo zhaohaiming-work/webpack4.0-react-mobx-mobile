@@ -8,6 +8,9 @@ html,body{
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }
+body{
+  font-size: 14px;
+}
 body *,
 body *::before,
 body *::after
