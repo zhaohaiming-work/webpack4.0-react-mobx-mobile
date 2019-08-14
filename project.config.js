@@ -20,7 +20,6 @@ module.exports = {
     'redux',
     'react-redux',
     'redux-thunk',
-    'react-router-dom',
-    'babel-polyfill'
+    'react-router-dom'
   ],
 }
