@@ -9,6 +9,8 @@ import Home from 'pages/Home'
 import PageLayout from 'layout'
 import Base from './routes'
 const Login = lazy(() => import('./routes/Login/index'))
+const NotFound = lazy(() => import('components/404'))
+
 class App extends React.Component {
   componentDidMount () {
     // 初始化快速点击
@@ -28,8 +30,11 @@ class App extends React.Component {
                 <Route path='/login' component={Login} />
                 <Route path='/' component={({ match }) => (
                   <PageLayout>
-                    <Route exact path={match.url} component={Home} />
-                    {Base}
+                    <Switch>
+                      <Route exact path={match.url} component={Home} />
+                      {Base}
+                      <Route component={NotFound} />
+                    </Switch>
                   </PageLayout>
                 )} />
               </Switch>
