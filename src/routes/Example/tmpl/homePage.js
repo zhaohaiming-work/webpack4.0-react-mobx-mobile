@@ -20,6 +20,7 @@ class App extends React.Component {
     const { todos, count, add, dateList } = this.props.example
     return (
       <div>
+        {ddd}
         {
           todos.map(v => {
             return <div key={v.title}>{v.title}</div>

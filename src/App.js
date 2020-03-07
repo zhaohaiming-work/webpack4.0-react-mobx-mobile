@@ -8,6 +8,7 @@ import { Provider } from 'mobx-react'
 import Home from 'pages/Home'
 import PageLayout from 'layout'
 import Base from './routes'
+import ErrorBoundary from 'components/errorBoundary'
 const Login = lazy(() => import('./routes/Login/index'))
 const NotFound = lazy(() => import('components/404'))
 
@@ -22,7 +23,7 @@ class App extends React.Component {
   }
   render () {
     return (
-      <React.Fragment>
+      <ErrorBoundary>
         <Provider {...store}>
           <HashRouter>
             <Suspense fallback={Loadable}>
@@ -41,7 +42,7 @@ class App extends React.Component {
             </Suspense>
           </HashRouter>
         </Provider>
-      </React.Fragment>
+      </ErrorBoundary>
     )
   }
 }
