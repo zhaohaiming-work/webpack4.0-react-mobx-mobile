@@ -1,7 +1,5 @@
-import React from 'react'
 import mergeRoute from 'components/merge-routes'
-const Home = React.lazy(() => import('./tmpl/home-page'))
-const Test = React.lazy(() => import('./tmpl/test'))
+import { Home, Test } from 'pages/example'
 export default mergeRoute([
   {
     path: '/example',
